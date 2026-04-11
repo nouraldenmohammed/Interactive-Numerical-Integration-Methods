@@ -189,7 +189,7 @@ with tab2:
             
             df_R = pd.DataFrame(R, columns=columns, index=index)
             # Replace zeros in upper triangle with empty string for better readability
-            df_R = df_R.applymap(lambda x: f"{x:.8f}" if x != 0 else "")
+            df_R = df_R.map(lambda x: f"{x:.8f}" if x != 0 else "")
             
             st.markdown("**Romberg Table:**")
             st.dataframe(df_R, use_container_width=True)
